@@ -25,9 +25,17 @@ MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that make
 Due to physical limitation of the setup avaliable we only simulate normal and imbalance conditions. The results of this are 70 excel files with acceleration and FFT data.
 For more information about the experiments please read the full work in PDF (portuguese only) avaliable on github.
 
-## Steps for new classifications
+## New classifications
 
-Get acceleration by time data in axial, tangential and radiale directions from a rotating machinery -> get time features -> transform to frequency domain (FFT) -> get FFT features -> transform FFT data (generalize for any size of machine) -> fit, transform and predict
+* Get acceleration by time data from a rotating machinery
+  * axial
+  * tangential
+  * radiale  
+* Get time features
+* Transform to frequency domain (FFT)
+* Transform FFT data (generalize for any size of machine)
+* Get FFT features
+* Fit, transform and predict
 
 ## Initial features extraction
 
