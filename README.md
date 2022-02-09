@@ -11,17 +11,23 @@ This work can be splited in 3 main parts:
   * Download, analysis, extract, create, train and validate a machine learning model for MAFAULDA
   * Perform experiments in a different machine to simulate MAFAULDA, and create a new dataset
   * Merge, transform and generalize, the two datasets to perform a new classification
+
+![flowchart](https://github.com/bg-rocha/imgs/blob/main/TCC.png?raw=true)
  
 
 ### About MAFAULDA
 
-MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that makes available a large dataset with diferent condition of operation and faults for a rotating machinery. For more information visit [MAFAULDA's web page](http://www02.smt.ufrj.br/~offshore/mfs/page_01.html).
+MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that makes available a large dataset (+13GB) with diferent condition of operation and faults for a rotating machinery. For more information visit [MAFAULDA's web page](http://www02.smt.ufrj.br/~offshore/mfs/page_01.html).
 
 
 ### Experiments
 
 Due to physical limitation of the setup avaliable we only simulate normal and imbalance conditions. The results of this are 70 excel files with acceleration and FFT data.
 For more information about the experiments please read the full work in PDF (portuguese only) avaliable on github.
+
+## Steps for new classifications
+
+Get acceleration by time data in axial, tangential and radiale directions from a rotating machinery -> get time features -> transform to frequency domain (FFT) -> get FFT features -> transform FFT data (generalize for any size of machine) -> fit, transform and predict
 
 ## Initial features extraction
 
