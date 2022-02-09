@@ -37,21 +37,3 @@ For more information about the experiments please read the full work in PDF (por
 * Get FFT features
 * Fit, transform and predict
 
-## Initial features extraction
-
-From the acelraton by time data of MAFAULDA dataset we extract features both in time and frequency domain.
-* Time domain:
-  * Peak
-  * RMS
-  * Crest factor
-  * Curtose
-
-* Frequency Domain (FFT):
-  * Peak at 1xN
-  * Peak at 2xN
-  * Peak at 3xN
-  * Peak at 4xN
-  * Peak at 5xN
-  * Peak at 6xN
-  
-where N = rotating frequency
