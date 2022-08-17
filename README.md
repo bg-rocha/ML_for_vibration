@@ -10,34 +10,30 @@ The application of concepts and tools of Industry 4.0 is fundamental to potentia
 This work can be splited in 3 main parts:
   * Download, analysis, extract, create, train and validate a machine learning model for MAFAULDA
   * Perform experiments in a different machine to simulate MAFAULDA, and create a new dataset
-  * Merge, trnasfom and generalize, the two datasets to perform a new classification
+  * Merge, transform and generalize, the two datasets to perform a new classification
+
+![flowchart](https://github.com/bg-rocha/imgs/blob/main/TCC.png?raw=true)
  
 
 ### About MAFAULDA
 
-MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that makes available a large dataset with diferent condition of operation and faults for a rotating machinery. For more information visit [MAFAULDA's web page](http://www02.smt.ufrj.br/~offshore/mfs/page_01.html).
+MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that makes available a large dataset (+13GB) with diferent condition of operation and faults for a rotating machinery. For more information visit [MAFAULDA's web page](http://www02.smt.ufrj.br/~offshore/mfs/page_01.html).
 
 
 ### Experiments
 
 Due to physical limitation of the setup avaliable we only simulate normal and imbalance conditions. The results of this are 70 excel files with acceleration and FFT data.
-For more information about the experiments please read the full work in PDF avaliable on github.
+For more information about the experiments please read the full work in PDF (portuguese only) avaliable on github.
 
-## Initial features extraction
+## New classifications
 
-From the acelraton by time data of MAFAULDA dataset we extract features both in time and frequency domain.
-* Time domain:
-  * Peak
-  * RMS
-  * Crest factor
-  * Curtose
+* Get acceleration by time data from a rotating machinery
+  * axial
+  * tangential
+  * radiale  
+* Get time features
+* Transform to frequency domain (FFT)
+* Transform FFT data (generalize for any size of machine)
+* Get FFT features
+* Fit, transform and predict
 
-* Frequency Domain (FFT):
-  * Peak at 1xN
-  * Peak at 2xN
-  * Peak at 3xN
-  * Peak at 4xN
-  * Peak at 5xN
-  * Peak at 6xN
-  
-where N = rotating frequency
