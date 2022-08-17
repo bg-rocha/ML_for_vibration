@@ -9,31 +9,31 @@ st.markdown("Alunos: Bruno Gonçalves Rocha e João Guilherme Cotta Machado de S
 
 info = st.checkbox('Mostrar instruções', value=False)
 if info:
-    st.markdown('### 1 - Selecione um arquivo ".xlsx" ou .csv')
+    st.markdown('### 1 - Selecione um arquivo .xlsx ou .csv')
     st.markdown('O arquivo deve seguir o modelo abaixo:')
     ex = pd.read_csv('assets/exemplo.csv')
     st.dataframe(ex)
-    st.markdown('As colunas correspondem as acelerações do sistema mecânico no dominio do tempo.')
-    st.markdown('Obs: as colunas não precisam ter os mesmos nomes, mas devem obdecer a mesma sequencia: direções axial, tangencial e radial')
+    st.markdown('As colunas correspondem as acelerações do sistema mecânico no domínio do tempo.')
+    st.markdown('Obs: as colunas não precisam ter os mesmos nomes, mas devem obedecer a mesma sequência: direções axial, tangencial e radial')
     st.image('assets/directions.png')
 
-    st.markdown('### 2 - Frequencia de aquisição:')
-    st.markdown('É a frequencia com que os dados foram coletados')
+    st.markdown('### 2 - Frequência de aquisição:')
+    st.markdown('É a frequência com que os dados foram coletados')
     st.latex(r'f = \frac{1}{(t_1 - t_0)} [Hz]')
     st.markdown("""
-    \t Esse modelo considera para a classificação frequencias de até 2x a frequência de rotação do sistema.
-    Portanto baseado no teorema de Nyquist, a frequencia de aquisição deverá ser no mínimo 4x maior que
+    \t Esse modelo considera para a classificação frequências de até 2x a frequência de rotação do sistema.
+    Portanto baseado no teorema de Nyquist, a frequência de aquisição deverá ser no mínimo 4x maior que
     a frequência de rotação do motor.
     """)
     
-    st.markdown('### 3 - Frequencia de rotação do motor:')
+    st.markdown('### 3 - Frequência de rotação do motor:')
     st.markdown("""Corresponde a frequência de rotação do eixo do sistema, idealmente deve ser obtida
-     apartir de uma medição com um tacômetro. Caso não seja possível pode ser informada a rotação do motor.
+     a partir de uma medição com um tacômetro. Caso não seja possível, pode ser informada a rotação do motor.
      """)
 
     st.markdown('### Exemplo:')
-    st.markdown("""A seguir estão disponibilizados dois arquivos obtidos apartir de experimentos realizados
-    durante esse trabalho, a frequencia de aquisição para ambos é de 1200 Hz e a rotação do motor esta informada
+    st.markdown("""A seguir estão disponibilizados dois arquivos obtidos a partir de experimentos realizados
+    durante esse trabalho, a frequência de aquisição para ambos é de 1200 Hz e a rotação do motor está informada
     no nome do arquivo.
     """)
     with open('assets/exemplos/exemplos.rar', 'rb') as f:
