@@ -25,15 +25,6 @@ MAFAULDA stands for Machinery Fault Database. It's a project from UFRJ that make
 Due to physical limitation of the setup avaliable we only simulate normal and imbalance conditions. The results of this are 70 excel files with acceleration and FFT data.
 For more information about the experiments please read the full work in PDF (portuguese only) avaliable on github.
 
-## New classifications
+## Final Classifier:
 
-* Get acceleration by time data from a rotating machinery
-  * axial
-  * tangential
-  * radiale  
-* Get time features
-* Transform to frequency domain (FFT)
-* Transform FFT data (generalize for any size of machine)
-* Get FFT features
-* Fit, transform and predict
-
+Our final classifier is avaliable via Heroku [here](https://ml-vibration-classifier.herokuapp.com/) (portuguese only)
