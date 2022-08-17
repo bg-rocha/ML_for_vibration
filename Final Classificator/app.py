@@ -5,10 +5,50 @@ from predict_class import *
 st.title('Classificador de Desbalanceamento')
 st.markdown('Modelo desenvolvido durante o trabalho de conclusão de curso da Engenharia Mecânica UFPR')
 st.markdown("Alunos: Bruno Gonçalves Rocha e João Guilherme Cotta Machado de Souza")
-info = st.checkbox('Mostrar instruções', value=True)
-uploaded_file = st.sidebar.file_uploader('Choose a file', help='teste')
+
+
+info = st.checkbox('Mostrar instruções', value=False)
+if info:
+    st.markdown('### 1 - Selecione um arquivo ".xlsx" ou .csv')
+    st.markdown('O arquivo deve seguir o modelo abaixo:')
+    ex = pd.read_csv('assets/exemplo.csv')
+    st.dataframe(ex)
+    st.markdown('As colunas correspondem as acelerações do sistema mecânico no dominio do tempo.')
+    st.markdown('Obs: as colunas não precisam ter os mesmos nomes, mas devem obdecer a mesma sequencia: direções axial, tangencial e radial')
+    st.image('assets/directions.png')
+
+    st.markdown('### 2 - Frequencia de aquisição:')
+    st.markdown('É a frequencia com que os dados foram coletados')
+    st.latex(r'f = \frac{1}{(t_1 - t_0)} [Hz]')
+    st.markdown("""
+    \t Esse modelo considera para a classificação frequencias de até 2x a frequência de rotação do sistema.
+    Portanto baseado no teorema de Nyquist, a frequencia de aquisição deverá ser no mínimo 4x maior que
+    a frequência de rotação do motor.
+    """)
+    
+    st.markdown('### 3 - Frequencia de rotação do motor:')
+    st.markdown("""Corresponde a frequência de rotação do eixo do sistema, idealmente deve ser obtida
+     apartir de uma medição com um tacômetro. Caso não seja possível pode ser informada a rotação do motor.
+     """)
+
+    st.markdown('### Exemplo:')
+    st.markdown("""A seguir estão disponibilizados dois arquivos obtidos apartir de experimentos realizados
+    durante esse trabalho, a frequencia de aquisição para ambos é de 1200 Hz e a rotação do motor esta informada
+    no nome do arquivo.
+    """)
+    with open('assets/exemplos/exemplos.rar', 'rb') as f:
+        st.download_button('Download Exemplo', data=f, file_name='exemplos.rar')
+
+
+
+
+
+
+uploaded_file = st.sidebar.file_uploader('Selecione o arquivo', 
+                            help='Arquivo exel ou csv correspondemente ao modelo. Veja instruções para mais detalhes',
+                            type=['csv', 'xlsx'])
 aq1, aq2 = st.sidebar.columns(2)
-freq_s = aq1.number_input('Frequencia de aquisição dos dados:', min_value=0,step=100, value=1200,)
+freq_s = aq1.number_input('Frequencia de aquisição dos dados:', min_value=0,step=100, value=1200)
 unidade = aq2.radio("Unidade:", ['Hz', 'RPM'])
 motor1, motor2 = st.sidebar.columns(2)
 rot = motor1.number_input('Rotação do motor:', min_value=0,step=100, value=1000)
@@ -35,6 +75,7 @@ def error_message(text, size=12):
     return f'<p style="font-family:Courier; color:red; font-size: {size}px;">{text}</p>'
 
 if pred:
+    info = False
     if uploaded_file is None:
         st.sidebar.markdown(error_message('Nenhum arquivo foi adicionado'),unsafe_allow_html=True)
     else:
