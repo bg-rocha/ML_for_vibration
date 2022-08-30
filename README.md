@@ -27,4 +27,6 @@ For more information about the experiments please read the full work in PDF (por
 
 ## Final Classifier:
 
-Our final classifier is avaliable via Heroku [here](https://ml-vibration-classifier.herokuapp.com/) (portuguese only)
+Our final classifier is avaliable via Heroku [here](https://ml-vibration-classifier.herokuapp.com/)
+![classifier](https://github.com/bg-rocha/imgs/blob/main/classifier.png?raw=true)
+
